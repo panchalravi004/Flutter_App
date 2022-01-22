@@ -1,7 +1,4 @@
 // ignore_for_file: prefer_const_constructors, unnecessary_const
-
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,7 +6,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold( 
         appBar: AppBar(
           title: Text("Quick Shop"),
           centerTitle: true,
