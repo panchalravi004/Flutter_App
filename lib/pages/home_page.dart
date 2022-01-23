@@ -9,9 +9,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Quick Shop"),
+          title: Text("Quick Shop",style: TextStyle(color: Colors.black),),
           centerTitle: true,
-          backgroundColor: Colors.deepPurple,
         ),
         body: Center(
           child:Container(
