@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           title: Text("Quick Shop"),
           centerTitle: true,
-          backgroundColor: Colors.deep,
+          backgroundColor: Colors.deepPurple,
         ),
         body: Center(
           child:Container(
