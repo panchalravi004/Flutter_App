@@ -15,17 +15,17 @@ class _LoginPageState extends State<LoginPage> {
   bool changeButton = false;
   final _formkey = GlobalKey<FormState>();
 
-  moveToHome(BuildContext context) {
+  moveToHome(BuildContext context) async {
     if (_formkey.currentState!.validate())
     {
         setState(() {
           changeButton = true;
         });
-        Future.delayed(Duration(seconds: 1));
-        Navigator.pushNamed(context, MyRoutes.homeroutes);
+        await Future.delayed(Duration(seconds: 1));
+        await Navigator.pushNamed(context, MyRoutes.homeroutes);
         setState(() {
           changeButton = false;
-      });
+        });
     }
     
   }
@@ -61,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.symmetric(
                     vertical: 16.0, horizontal: 32.0),
                 child: Column(
-                  children: [
+                  children: [    
                     TextFormField(
                       decoration: InputDecoration(
                         hintText: "Username",
