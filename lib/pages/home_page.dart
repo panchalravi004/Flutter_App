@@ -17,15 +17,16 @@ class HomePage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          itemCount: CatalogModel.items.length,
-          itemBuilder: (context, index) {
-            return itemwidget(item: CatalogModel.items[index]);
-          },
+      body:
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 22,horizontal: 8),
+          child: ListView.builder(
+            itemCount: CatalogModel.items.length,
+            itemBuilder: (context, index) {
+              return itemwidget(item: CatalogModel.items[index]);
+            },
+          ),
         ),
-      ),
       drawer: MyDrawer(),
     );
   }

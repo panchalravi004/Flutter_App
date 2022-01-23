@@ -21,7 +21,7 @@ class itemwidget extends StatelessWidget {
           // ignore: prefer_const_constructors
           style: TextStyle(
               color: Colors.deepPurple,
-              fontSize: 20,
+              fontSize: 15,
               fontWeight: FontWeight.bold),
         ),
       ),

@@ -5,29 +5,32 @@ import 'package:my_app/utils/routes.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
-
+  static String pname = "";
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String name = "";
+  static String name = "";
   bool changeButton = false;
   final _formkey = GlobalKey<FormState>();
+  final TextEditingController _uname = new TextEditingController();
+  final TextEditingController _pwd = new TextEditingController();
 
   moveToHome(BuildContext context) async {
-    if (_formkey.currentState!.validate())
-    {
-        setState(() {
-          changeButton = true;
-        });
-        await Future.delayed(Duration(seconds: 1));
-        await Navigator.pushNamed(context, MyRoutes.homeroutes);
-        setState(() {
-          changeButton = false;
-        });
+    if (_formkey.currentState!.validate()) {
+      setState(() {
+        changeButton = true;
+      });
+      await Future.delayed(Duration(seconds: 1));
+      await Navigator.pushNamed(context, MyRoutes.homeroutes);
+      setState(() {
+        changeButton = false;
+        _uname.clear();
+        _pwd.clear();
+        name = "";
+      });
     }
-    
   }
 
   @override
@@ -61,14 +64,16 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.symmetric(
                     vertical: 16.0, horizontal: 32.0),
                 child: Column(
-                  children: [    
+                  children: [
                     TextFormField(
+                      controller: _uname,
                       decoration: InputDecoration(
                         hintText: "Username",
                         labelText: "Enter Username",
                       ),
                       onChanged: (value) {
                         name = value;
+                        LoginPage.pname = value;
                         setState(() {});
                       },
                       validator: (value) {
@@ -80,6 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     SizedBox(height: space),
                     TextFormField(
+                      controller: _pwd,
                       obscureText: true,
                       decoration: InputDecoration(
                         hintText: "Password",
@@ -88,8 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "Password Cant Be empty";
-                        }
-                        else if (value.length < 6) {
+                        } else if (value.length < 6) {
                           return "Password should be atleast 6";
                         }
                         return null;

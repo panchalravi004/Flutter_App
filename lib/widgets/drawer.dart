@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:my_app/pages/login_page.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class MyDrawer extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: null,
                 ),
-                accountName: Text("Ravi Panchal",style: TextStyle(color: Colors.black),),
+                accountName: Text(LoginPage.pname,style: TextStyle(color: Colors.black),),
                 accountEmail: Text("Ravi@gmail.com",style: TextStyle(color: Colors.black),),
                 //currentAccountPicture: Image.network(imageUrl),
                 currentAccountPicture: CircleAvatar(
