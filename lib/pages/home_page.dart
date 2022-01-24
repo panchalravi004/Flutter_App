@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, unnecessary_const
+
 import 'package:flutter/material.dart';
 import 'package:my_app/models/catelog.dart';
 import 'package:my_app/widgets/drawer.dart';
+import 'package:my_app/widgets/gride_view.dart';
 import 'package:my_app/widgets/item_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,16 +19,23 @@ class HomePage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body:
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 22,horizontal: 8),
-          child: ListView.builder(
-            itemCount: CatalogModel.items.length,
-            itemBuilder: (context, index) {
-              return itemwidget(item: CatalogModel.items[index]);
-            },
-          ),
-        ),
+      body://itwidget(),
+      GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,childAspectRatio: 0.85),
+        itemCount: CatalogModel.items.length,
+        itemBuilder: (context, index) {
+          return itwidget(item: CatalogModel.items[index]);
+        },
+      ),
+      // Padding(
+      //   padding: const EdgeInsets.symmetric(vertical: 22,horizontal: 8),
+      //   child: ListView.builder(
+      //     itemCount: CatalogModel.items.length,
+      //     itemBuilder: (context, index) {
+      //       return itemwidget(item: CatalogModel.items[index]);
+      //     },
+      //   ),
+      // ),
       drawer: MyDrawer(),
     );
   }
