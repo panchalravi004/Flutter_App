@@ -22,11 +22,11 @@ class _itwidgetState extends State<itwidget> {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: GestureDetector(
-        onTap: () {
-          setState(() {
-            change = true;
-          });
-        },
+        // onTap: () {
+        //   setState(() {
+        //     change = true;
+        //   });
+        // },
         child: Card(
           elevation: 1,
           child: AnimatedContainer(
@@ -39,7 +39,7 @@ class _itwidgetState extends State<itwidget> {
               boxShadow: [
                 // ignore: unnecessary_new
                 new BoxShadow(
-                  color: change ? Colors.black38 : Colors.transparent,
+                  color: /*change ? Colors.black38 : */Colors.transparent,
                   spreadRadius: 0.1,
                   blurRadius: 10,
                 ),
@@ -77,8 +77,8 @@ class _itwidgetState extends State<itwidget> {
                                   : heart_click = true;
                             },
                             child: heart_click
-                                ? Icon(CupertinoIcons.heart_fill,size: 30,color: Colors.pink,)
-                                : Icon(CupertinoIcons.heart,size: 30,)
+                                ? Icon(CupertinoIcons.heart_fill,size: 25,color: Colors.pink,)
+                                : Icon(CupertinoIcons.heart,size: 25,)
                             ),
                       ),
                       Text(
