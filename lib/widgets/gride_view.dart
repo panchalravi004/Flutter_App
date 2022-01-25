@@ -34,7 +34,7 @@ class _itwidgetState extends State<itwidget> {
             width: 180,
             height: 210,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Colors.white, 
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 // ignore: unnecessary_new
