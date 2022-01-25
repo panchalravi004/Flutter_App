@@ -49,10 +49,12 @@ class _HomePageState extends State<HomePage> {
           GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2, 
-              childAspectRatio: 0.85),
+              childAspectRatio: 0.85,
+              //mainAxisSpacing: 5
+              ),
           itemCount: CatalogModel.items.length,
           itemBuilder: (context, index) {
-            return itwidget(item: CatalogModel.items[index]);
+            return itwidget(item: CatalogModel.items[index]); 
           },
         ):
         Center(
@@ -64,7 +66,7 @@ class _HomePageState extends State<HomePage> {
       //     itemCount: CatalogModel.items.length,
       //     itemBuilder: (context, index) {
       //       return itemwidget(item: CatalogModel.items[index]);
-      //     },
+      //     }, 
       //   ),
       // ),
       drawer: MyDrawer(),

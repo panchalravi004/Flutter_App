@@ -20,7 +20,7 @@ class _itwidgetState extends State<itwidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
         // onTap: () {
         //   setState(() {
@@ -65,21 +65,31 @@ class _itwidgetState extends State<itwidget> {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                      const EdgeInsets.symmetric(vertical: 16),
                   child: Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: InkWell(
-                            onTap: () {
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
                               heart_click
                                   ? heart_click = false
                                   : heart_click = true;
-                            },
+                            });
+                          },
+                          child: Container(
+                            width:35,
+                            height: 35,
                             child: heart_click
                                 ? Icon(CupertinoIcons.heart_fill,size: 25,color: Colors.pink,)
-                                : Icon(CupertinoIcons.heart,size: 25,)
-                            ),
+                                : Icon(CupertinoIcons.heart,size: 25,),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        child: Icon(CupertinoIcons.shopping_cart),
                       ),
                       Text(
                         "\$ ${widget.item.price}",
